@@ -67,7 +67,7 @@ public class CountryPickerDialog extends DialogFragment implements OnItemClickLi
     super.onStart();
     ViewGroup.LayoutParams params = getDialog().getWindow().getAttributes();
     params.width = LinearLayout.LayoutParams.MATCH_PARENT;
-    params.height = LinearLayout.LayoutParams.MATCH_PARENT;
+    params.height = LinearLayout.LayoutParams.WRAP_CONTENT;
     getDialog().getWindow().setAttributes((android.view.WindowManager.LayoutParams) params);
   }
 

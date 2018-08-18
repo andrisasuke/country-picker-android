@@ -11,6 +11,9 @@ import com.mukesh.countrypicker.Country;
 import com.mukesh.countrypicker.CountryPicker;
 import com.mukesh.countrypicker.OnCountryPickerListener;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements OnCountryPickerListener {
 
   private TextView countryNameTextView, countryIsoCodeTextView, countryDialCodeTextView,
@@ -47,6 +50,13 @@ public class MainActivity extends AppCompatActivity implements OnCountryPickerLi
         new CountryPicker.Builder().with(this)
             .listener(this)
             .build();
+    List<Country> countries = new LinkedList<>();
+    countries.add(countryPicker.getCountryByISO("id".toUpperCase()));
+    countries.add(countryPicker.getCountryByISO("us".toUpperCase()));
+    countries.add(countryPicker.getCountryByISO("gb".toUpperCase()));
+    countries.add(countryPicker.getCountryByISO("my".toUpperCase()));
+    countries.add(countryPicker.getCountryByISO("sg".toUpperCase()));
+    countryPicker.setCountries(countries);
   }
 
   @Override
